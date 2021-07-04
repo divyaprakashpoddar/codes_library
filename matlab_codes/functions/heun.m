@@ -1,5 +1,5 @@
 function y = heun(fun,t,y0)
-% ralstons: Solves IVP using Heun's method
+% heun: Solves IVP using Heun's method
 % y = heun(fun,t,ic):
 %   Solves the given IVP using Heun's method (improved/modified Euler's Method)
 %   https://en.wikipedia.org/wiki/Heun%27s_method
