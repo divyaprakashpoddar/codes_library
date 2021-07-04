@@ -1,6 +1,6 @@
 function y = heun(fun,t,y0)
 % heun: Solves IVP using Heun's method
-% y = heun(fun,t,ic):
+% y = heun(fun,t,y0):
 %   Solves the given IVP using Heun's method (improved/modified Euler's Method)
 %   https://en.wikipedia.org/wiki/Heun%27s_method
 %
