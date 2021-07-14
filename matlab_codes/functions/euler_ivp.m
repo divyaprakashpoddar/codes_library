@@ -1,4 +1,4 @@
-function [t,y] = euler_ivp(fun,t0,y0,tN,dt)
+function [t,y] = euler_ivp(fun,tspan,y0,dt)
 % euler_ivp: Solves IVP using Euler's method
 % [t,y] = euler_ivp(fun,t0,y0,tN,dt):
 %   Solves the given IVP using Euler's Method
@@ -18,12 +18,12 @@ function [t,y] = euler_ivp(fun,t0,y0,tN,dt)
 % e-mail: divyaprakash.poddar@gmail.com
 % Date  : 05 July 2021
 
-    t       = t0:dt:tN;
-    nt      = numel(t);
-    y       = zeros(1,nt);
-    y(1)    = y0;
+    t           = tspan(1):dt:tspan(2);
+    nt          = numel(t);
+    y           = zeros(numel(y0),nt);
+    y(:,1)      = y0;
     
     for i = 1:nt-1
-        y(i+1) = y(i) + fun(t(i),y(i))*dt;
+        y(:,i+1) = y(:,i) + fun(t(i),y(:,i))*dt;
     end
 end
