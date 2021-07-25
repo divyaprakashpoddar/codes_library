@@ -1,14 +1,13 @@
 function [t,y] = euler_ivp(fun,tspan,y0,dt)
-% euler_ivp: Solves IVP using Euler's method
+% euler_ivp: Solves IVP using Euler's methodSolves IVP using Euler's method
 % [t,y] = euler_ivp(fun,t0,y0,tN,dt):
 %   Solves a system of differential equations y' = f(t,y) using Euler's Method
 %
 % input: 
 %   fun = fun is a function handle. For a scalar t and a vector y, 
 %         fun(t,y) must return a column vector corresponding to f(t,y).
-%   t0  = Initial value of t
+%   tspan   = A vector contining the the start time and end time, [t0 tN].
 %   y0  = Intial value of y at t0
-%   tN  = Final value of y
 %   dt  = Step size
 % output:
 %   t = Values of t
@@ -17,7 +16,7 @@ function [t,y] = euler_ivp(fun,tspan,y0,dt)
 % Author: Divyaprakash
 %         Mechanical Engineer
 % e-mail: divyaprakash.poddar@gmail.com
-% Date  : 05 July 2021
+% Date  : 14 July 2021
 
     t           = tspan(1):dt:tspan(2);
     nt          = numel(t);
