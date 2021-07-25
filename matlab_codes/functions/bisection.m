@@ -1,12 +1,12 @@
-function [c, iter] = bisection(f,a,b,tol,maxiter)
-    if nargin == 3
-        maxiter = 100;
-    end
-	iter = 0;
+function [c, iter] = bisection(f,a,b,tol,maxIter)
 	c = mean([a,b]);
-	while abs(f(c)) > tol && iter < maxiter
-		[a, b ] = rootInterval(f,a,b,c);
-		c = mean([a,b]);
+    err = 1;
+	iter = 0;
+	while ((iter < maxIter) && (err > tol))
+		[a,b] = rootInterval(f,a,b,c);
+		cold = mean([a,b]);
+        err = abs(c-cold)/cold;
+        c = cold;
 		iter = iter + 1;
 	end
 end
